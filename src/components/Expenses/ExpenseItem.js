@@ -1,20 +1,20 @@
-import { useState } from 'react';
-import ExpenseDate from './ExpenseDate'
-import './ExpenseItem.css';
-import Card from './Card'
+import { useState } from "react";
+import ExpenseDate from "./ExpenseDate";
+import "./ExpenseItem.css";
+import Card from "../UI/Card";
 
 function ExpenseItem({ title, amount, date }) {
   const [expTitle, setExpTitle] = useState(title);
 
   const clickHandler = () => {
     setExpTitle("Updated!");
-  }
+  };
   return (
-    <Card className='expense-item'>
-      <ExpenseDate date={date}/>
-      <div className='expense-item__description'>
+    <Card className="expense-item">
+      <ExpenseDate date={date} />
+      <div className="expense-item__description">
         <h2>{expTitle}</h2>
-        <div className='expense-item__price'>{amount}</div>
+        <div className="expense-item__price">{amount}</div>
       </div>
       <button onClick={clickHandler}>Change Title</button>
     </Card>
