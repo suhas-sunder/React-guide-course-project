@@ -43,7 +43,8 @@ function ExpenseForm({ onSaveExpenseData }) {
       enteredTitle: (''),
       enteredAmount: (''),
       enteredDate: ('')
-    })
+    });
+
   };
 
   return (
