@@ -30,9 +30,7 @@ function NewExpense({ onAddExpense }) {
         <button onClick={() => editingHandler(false)}>Cancel</button>
       )}
       {isEditing && (
-        <ExpenseForm
-          onSaveExpenseData={onSaveExpenseDataHandler}
-        />
+        <ExpenseForm onSaveExpenseData={onSaveExpenseDataHandler} />
       )}
     </div>
   );

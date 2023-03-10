@@ -15,13 +15,13 @@ function ExpenseForm({ onSaveExpenseData }) {
     });
   };
 
-  const amountChangeHandler = (event) => {    
+  const amountChangeHandler = (event) => {
     setUserInput((prevState) => {
       return { ...prevState, enteredAmount: event.target.value };
     });
   };
 
-  const dateChangeHandler = (event) => {    
+  const dateChangeHandler = (event) => {
     setUserInput((prevState) => {
       return { ...prevState, enteredDate: event.target.value };
     });
@@ -32,19 +32,18 @@ function ExpenseForm({ onSaveExpenseData }) {
 
     const expenseData = {
       title: userInput.enteredTitle,
-      amount: userInput.enteredAmount,
-      date: new Date(`${userInput.enteredDate}T12:00`)
-    }
+      amount: +userInput.enteredAmount,
+      date: new Date(`${userInput.enteredDate}T12:00`),
+    };
 
-    console.log(userInput.enteredDate, expenseData.date)
+    console.log(userInput.enteredDate, expenseData.date);
 
     onSaveExpenseData(expenseData);
     setUserInput({
-      enteredTitle: (''),
-      enteredAmount: (''),
-      enteredDate: ('')
+      enteredTitle: "",
+      enteredAmount: "",
+      enteredDate: "",
     });
-
   };
 
   return (
@@ -52,7 +51,11 @@ function ExpenseForm({ onSaveExpenseData }) {
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
-          <input type="text" value={userInput.enteredTitle} onChange={titleChangeHandler} />
+          <input
+            type="text"
+            value={userInput.enteredTitle}
+            onChange={titleChangeHandler}
+          />
         </div>
         <div className="new-expense__control">
           <label>Amount</label>
